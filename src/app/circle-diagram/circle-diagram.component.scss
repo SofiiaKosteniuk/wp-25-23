@@ -1,0 +1,41 @@
+.circle-container {
+  width: 150px;
+  height: 150px;
+  display: inline-block;
+}
+
+.circular-chart {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.circle-bg {
+  fill: none;
+  stroke: #414e5e;
+  stroke-width: 2;
+}
+
+.circle {
+  fill: none;
+  stroke: #8e0505;
+  stroke-width: 2;
+  stroke-linecap: round;
+  transform: rotate(-90deg);
+  transform-origin: center;
+  transition: stroke-dasharray 0.6s ease;
+}
+
+.percentage {
+  fill: white;
+  font-size: 8px;
+  text-anchor: middle;
+  font-weight: bold;
+}
+
+.label {
+  fill: white;
+  font-size: 4px;
+  text-anchor: middle;
+  font-weight: bold;
+}

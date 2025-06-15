@@ -1,0 +1,66 @@
+<div class="main">
+  <div class="head">
+    <div class="info">
+      <div class="name">GARY T.</div>
+      <div class="lastname">WALTON</div>
+      <div class="block">
+        <div class="jobinfo"><a>GRAPHIC & WEB DESIGNER</a></div>
+      </div>
+      <div class="inf1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua.Duis aute irure
+        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum.
+        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+        ut aliquip ex ea commodo consequat.
+      </div>
+      <div class="inf2">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua."</div>
+    </div>
+    <div class="face">
+      <div class="circle">
+        <div class="photo"></div>
+        <img [src]="'assets/myphoto.png'" alt="My Photo" class="photo-rectangle" />
+      </div>
+      <button routerLink="/registration" class="nav-button"><img class="other" src="assets/log-in.png"></button>
+    </div>
+  </div>
+  <div class="block2">
+    <div class="communication">
+      <div *ngFor="let item of Commun; let i = index"  class="block3">
+        <div class="photo"><img class="item" [src]="item.photo"></div>
+        <div class="line"></div>
+        <div class="information" [ngClass]="i === 1 ? 'special' : 'normal'">{{item.name}}</div>
+      </div>
+    </div>
+    <div class="skills">
+      <div class="skill">SKILLS</div>
+      <div class="lines">
+        <div class="line1"></div>
+        <div class="line2"></div>
+      </div>
+      <div class="skills-container">
+        <div class="skill-column">
+          <div *ngFor="let skill of skills.slice(0, 3)" class="skill">
+            <label>{{ skill.name }}</label>
+            <div class="bar-bg">
+              <div class="bar-fill" [style.width.%]="skill.level"></div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-column">
+          <div *ngFor="let skill of skills.slice(3)" class="skill">
+            <label>{{ skill.name }}</label>
+            <div class="bar-bg">
+              <div class="bar-fill" [style.width.%]="skill.level"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="main2">
+    <app-main></app-main>
+   <app-job></app-job>
+  </div>
+</div>

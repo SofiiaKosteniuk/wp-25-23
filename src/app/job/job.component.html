@@ -1,0 +1,35 @@
+<div class="main">
+  <div class="job">
+    <div class="job-logo">JOB EXPERIENCE</div>
+    <div class="lines">
+      <div class="line1"></div>
+      <div class="line2"></div>
+    </div>
+    <div *ngFor="let item of Job" class="experience">
+      <div class="year">
+        <div class="text">{{item.data}}</div>
+      </div>
+      <div class="info">
+        <div class="position">{{item.position}}</div>
+        <div class="space">
+          <div class="place">{{item.place}}</div>
+          <div class="city">{{item.city}}</div>
+        </div>
+        <div class="inform">{{item.info}}</div>
+      </div>
+    </div>
+  </div>
+  <div class="hobbies">
+    <div class="hobby-logo">HOBBIES</div>
+    <div class="lines">
+      <div class="line1"></div>
+      <div class="line2"></div>
+    </div>
+    <div class="infohobbies">
+      <div *ngFor="let item of Hobbies; let i = index" class="circle">
+        <div class="icon"><img [ngClass]="i === 4 ? 'special' : 'normal'" class="item" [src]="item.photo"></div>
+        <div class="text">{{item.text}}</div>
+      </div>
+    </div>
+  </div>
+</div>

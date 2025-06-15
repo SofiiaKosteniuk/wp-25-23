@@ -1,0 +1,53 @@
+<body>
+<div class="main">
+  <div class="toggle-buttons">
+    <button (click)="showLogin = false">Sign up</button>
+    <button (click)="showLogin = true">Login</button>
+  </div>
+
+  <div class="signup" *ngIf="!showLogin">
+    <form [formGroup]="signupForm" (ngSubmit)="onSignup()">
+      <label aria-hidden="true">Sign up</label>
+
+      <input [(ngModel)]="user.username" type="text" formControlName="username" placeholder="User name">
+      <div class="error" *ngIf="signupForm.get('username')?.invalid && signupForm.get('username')?.touched">
+        User name is required.
+      </div>
+
+      <input [(ngModel)]="user.email" type="email" formControlName="email" placeholder="Email">
+      <div class="error" *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched">
+        A valid email is required.
+      </div>
+
+      <input [(ngModel)]="user.phonenumber" type="number" formControlName="phonenumber" placeholder="Phone number">
+      <div class="error" *ngIf="signupForm.get('phonenumber')?.invalid && signupForm.get('phonenumber')?.touched">
+        Phone number is required.
+      </div>
+
+      <input [(ngModel)]="user.password" type="password" formControlName="password" placeholder="Password">
+      <div class="error" *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched">
+        Password is required.
+      </div>
+      <button type="submit" [disabled]="signupForm.invalid">Sign up</button>
+    </form>
+  </div>
+
+  <div class="login" *ngIf="showLogin">
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+      <label aria-hidden="true">Login</label>
+
+      <input [(ngModel)]="user.email" type="email" formControlName="email" placeholder="Email">
+      <div class="error" *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+        A valid email is required.
+      </div>
+
+      <input [(ngModel)]="user.password" type="password" formControlName="password" placeholder="Password">
+      <div class="error" *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+        Password is required.
+      </div>
+
+      <button type="submit" [disabled]="loginForm.invalid">Login</button>
+    </form>
+  </div>
+</div>
+</body>
